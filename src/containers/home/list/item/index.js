@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { ListGroupItem } from 'react-bootstrap';
 
 export default class List extends Component {
   render() {
     return (
-      <li className="list__item">
+      <ListGroupItem className="list__item">
         <p>List Item</p>
-      </li>
+      </ListGroupItem>
     );
   }
 }
