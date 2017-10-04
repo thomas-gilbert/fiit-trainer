@@ -31,11 +31,11 @@ export class Controller extends Component {
         xsOffset={3}
       >
         <Col xs={6}>
-          <Select options={this.state.cardio} />
+          <Select options={this.props.exercises.cardio} />
           <button>Add</button>
         </Col>
         <Col xs={6}>
-          <Select options={this.state.cardio} />
+          <Select options={this.props.exercises.weight} />
           <button>Add</button>
         </Col>
       </Col>

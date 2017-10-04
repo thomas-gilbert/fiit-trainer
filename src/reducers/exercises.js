@@ -18,12 +18,12 @@ export default function(state={
 		case SET_CARDIO_EXERCISES:
 			return {
 				...state,
-				cardio: [action.payload] 
+				cardio: action.payload
 			};
 		case SET_WEIGHT_EXERCISES:
 			return {
 				...state,
-				weight: [action.payload] 
+				weight: action.payload
 			};
 	  default:
 	    return state;

@@ -1,9 +1,13 @@
 import React from 'react';
 
-function Select() {
+function Select(options) {
   return (
     <select>
-      <option>Cardio</option>
+      {
+      	options.length ? options.map((value, key) => {
+      		return <option key={key}>{ value }</option>;
+      	}) : null
+      }
     </select>
   );
 }
