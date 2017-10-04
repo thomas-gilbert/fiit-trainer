@@ -3,11 +3,11 @@ import { success, failure } from './libs/response-lib';
 
 export async function main(event, context, callback) {
   const params = {
-    TableName: 'exercises',
-    IndexName: 'type-index'
-    KeyConditionExpression: 'type = :type'
+    TableName: 'exerciseList',
+    IndexName: 'exerciseType-index',
+    KeyConditionExpression: 'exerciseType = :exerciseType',
     ExpressionAttributeValues: {
-      ':type': event.type
+      ':exerciseType': event.exerciseType
     },
     ProjectionExpression: 'exerciseName',
   };
@@ -15,14 +15,13 @@ export async function main(event, context, callback) {
   try {
     const result = await dynamoDbLib.call('query', params);
 
-    if (result.Item) {
+    if (result.Items) {
       // Return the retrieved item
-      callback(null, success(result.Item));
+      callback(null, success(result.Items));
     } else {
-      callback(null, failure({ status: false, error: 'Item not found.' }));
+      callback(null, failure({ status: false, error: 'Items not found.' }));
     }
   } catch (e) {
-    console.log(e);
     callback(null, failure({ status: false }));
   }
 }
