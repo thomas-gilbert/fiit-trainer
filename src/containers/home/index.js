@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Controller from './controller/index.js';
+import List from './list/index.js';
 import './index.css';
 
 export default class Home extends Component {
@@ -8,6 +10,8 @@ export default class Home extends Component {
         <div className="lander">
           <h1>FIIT Trainer</h1>
           <p>A programmable HIIT Trainer</p>
+          <Controller />
+          <List />
         </div>
       </div>
     );
