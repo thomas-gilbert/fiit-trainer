@@ -4,9 +4,10 @@ import { success, failure } from './libs/response-lib';
 export async function main(event, context, callback) {
   const params = {
     TableName: 'exercises',
-    KeyConditionExpression: 'exerciseType = :type'
+    IndexName: 'type-index'
+    KeyConditionExpression: 'type = :type'
     ExpressionAttributeValues: {
-      ':type': event.exerciseType
+      ':type': event.type
     },
     ProjectionExpression: 'exerciseName',
   };
