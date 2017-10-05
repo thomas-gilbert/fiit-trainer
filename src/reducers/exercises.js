@@ -11,7 +11,6 @@ export default function(state={
 
   switch (action.type) {
   	case GET_EXERCISES_BY_TYPE:
-  		console.log(action)
   		return {
   			[action.payload]: action.payload
   		}

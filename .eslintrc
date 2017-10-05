@@ -1,0 +1,26 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "@jamesallardice/eslint-config-base",
+    "@jamesallardice/eslint-config-react"
+  ],
+  "globals": {
+    "describe" : false,
+    "context" : false,
+    "it": false,
+    "expect": false,
+    "beforeEach" : false,
+    "afterEach" : false,
+    "shallow" : false,
+    "mount" : false,
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "jest": true
+  },
+  rules: {
+    "generator-star-spacing": 0
+  }
+}

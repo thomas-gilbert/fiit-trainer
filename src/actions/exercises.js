@@ -5,8 +5,7 @@ import {
 	SET_WEIGHT_EXERCISES,
 } from './types';
 
-export function getCardioExercisesAsync() { 
-	console.log("data"); 
+export function getCardioExercisesAsync() {
   return dispatch => {
     axios.get('../../mocks/cardio-response.json')
       .then(res => {
@@ -20,9 +19,8 @@ export function getCardioExercisesAsync() {
 }
 
 export function getWeightExercisesAsync() {
-	console.log("data");
   return dispatch => {
-    axios.get('../../mocks/cardio-response.json')
+    axios.get('../../mocks/weight-response.json')
       .then(res => {
         const data = JSON.parse(res.data.body);
         const exerciseArray = data.map((value, key) => {
@@ -33,27 +31,27 @@ export function getWeightExercisesAsync() {
   }
 }
 
-export function getExercisesByType(type) {  
+export function getExercisesByType(type) {
   return dispatch => {
     dispatch(getExercises(type));
   }
 }
 
-function getExercises(type){  
+function getExercises(type){
   return {
     type: GET_EXERCISES_BY_TYPE,
     payload: type
   };
 }
 
-function setCardioExercises(data){  
+function setCardioExercises(data){
   return {
     type: SET_CARDIO_EXERCISES,
     payload: data
   };
 }
 
-function setWeightExercises(data){  
+function setWeightExercises(data){
   return {
     type: SET_WEIGHT_EXERCISES,
     payload: data
