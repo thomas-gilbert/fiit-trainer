@@ -7,7 +7,7 @@ export async function main(event, context, callback) {
     IndexName: 'exerciseType-index',
     KeyConditionExpression: 'exerciseType = :exerciseType',
     ExpressionAttributeValues: {
-      ':exerciseType': event.exerciseType
+      ':exerciseType': event.exerciseType,
     },
     ProjectionExpression: 'exerciseName',
   };
