@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
   getCardioExercisesAsync,
   getWeightExercisesAsync,
 } from '../../../actions/exercises.js';
-import Select from '../../../components/select/index.js';
+import ExerciseSelect from './exercise-select/index.js';
 
 export class Controller extends Component {
   static propTypes = {
-    exercises: PropTypes.array,
+    exercises: PropTypes.object,
     getCardioExercisesAsync: PropTypes.func.isRequired,
     getWeightExercisesAsync: PropTypes.func.isRequired,
   };
@@ -32,19 +32,20 @@ export class Controller extends Component {
 
   render() {
     return (
-      <Col
-        md={6}
-        xsOffset={3}
-      >
+      <Row>
         <Col xs={6}>
-          <Select options={this.props.exercises.cardio} />
-          <button>Add</button>
+          <ExerciseSelect
+            options={this.props.exercises.cardio}
+            defaultValue="Select exercise"
+          />
         </Col>
         <Col xs={6}>
-          <Select options={this.props.exercises.weight} />
-          <button>Add</button>
+          <ExerciseSelect
+            options={this.props.exercises.weight}
+            defaultValue="Select exercise"
+          />
         </Col>
-      </Col>
+      </Row>
     );
   }
 }

@@ -5,7 +5,7 @@ export default class List extends Component {
   render() {
     return (
       <ListGroupItem className="list__item">
-        <p>List Item</p>
+        <p>{this.props.text}</p>
       </ListGroupItem>
     );
   }
