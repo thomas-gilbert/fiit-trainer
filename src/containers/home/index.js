@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, PageHeader } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import {
+  removeExerciseFromList,
+} from '../../actions/list.js';
 import Controller from './controller/index.js';
 import List from '../../components/list/index.js';
 import './index.css';
@@ -9,6 +13,7 @@ import './index.css';
 export class Home extends Component {
   static propTypes = {
     list: PropTypes.object.isRequired,
+    removeExerciseFromList: PropTypes.func.isRequired,
   };
 
   render() {
@@ -18,11 +23,11 @@ export class Home extends Component {
           md={12}
         >
           <div className="lander">
-            <h1>FIIT Trainer</h1>
-            <p>A programmable HIIT Trainer</p>
+            <PageHeader>FIIT Trainer <small>A programmable HIIT Trainer</small></PageHeader>
             <Controller />
             <List
               list={this.props.list}
+              removeAction={this.props.removeExerciseFromList}
             />
           </div>
         </Col>
@@ -35,4 +40,9 @@ const mapStateToProps = (state) => ({
   list: state.list,
 });
 
-export default connect(mapStateToProps, null)(Home);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({
+    removeExerciseFromList,
+  }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

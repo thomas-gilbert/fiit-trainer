@@ -1,12 +1,32 @@
-import React, { Component } from 'react';
-import { ListGroupItem } from 'react-bootstrap';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {
+	ListGroupItem,
+	Button,
+	Glyphicon
+} from 'react-bootstrap';
 
-export default class List extends Component {
-  render() {
-    return (
-      <ListGroupItem className="list__item">
-        <p>{this.props.text}</p>
-      </ListGroupItem>
-    );
-  }
+const List = ({ removeAction, index, text }) => {
+	function onClick() {
+		removeAction(index);
+	}
+
+  return (
+    <ListGroupItem className="list__item">
+      <p>{text}</p>
+      <Button
+      	onClick={onClick}
+      >
+      	<Glyphicon glyph="remove" />
+      </Button>
+    </ListGroupItem>
+  );
 }
+
+List.propTypes = {
+	removeAction: PropTypes.func.isRequired,
+	index: PropTypes.number.isRequired,
+	text: PropTypes.string.isRequired,
+};
+
+export default List;

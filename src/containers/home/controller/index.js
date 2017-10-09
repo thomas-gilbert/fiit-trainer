@@ -32,20 +32,45 @@ export class Controller extends Component {
 
   render() {
     return (
-      <Row>
-        <Col xs={6}>
-          <ExerciseSelect
-            options={this.props.exercises.cardio}
-            defaultValue="Select exercise"
-          />
-        </Col>
-        <Col xs={6}>
-          <ExerciseSelect
-            options={this.props.exercises.weight}
-            defaultValue="Select exercise"
-          />
-        </Col>
-      </Row>
+      <div>
+        <Row>
+          <Col xsOffset={6} xs={6}>
+            <h3>Weight Exercises</h3>
+            <label>
+              Workout Time
+              <input type="number" value="20" placeholder="" />
+              Minutes
+            </label><br/>
+            <label>
+              Workout Interval
+              <input type="number" value="40" placeholder="" />
+              Seconds
+            </label><br/>
+            <label>
+              Rest Interval
+              <input type="number" value="20" placeholder="" />
+              Seconds
+            </label><br/>
+            <button>START</button>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={6}>
+            <h3>Cardio Exercises</h3>
+            <ExerciseSelect
+              options={this.props.exercises.cardio}
+              defaultValue="Select exercise"
+            />
+          </Col>
+          <Col xs={6}>
+            <h3>Weight Exercises</h3>
+            <ExerciseSelect
+              options={this.props.exercises.weight}
+              defaultValue="Select exercise"
+            />
+          </Col>
+        </Row>
+      </div>
     );
   }
 }

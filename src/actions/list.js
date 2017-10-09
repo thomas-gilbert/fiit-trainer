@@ -23,7 +23,7 @@ export function addExerciseToList(exercise) {
   };
 }
 
-export function removeExerciseToList(index) {
+export function removeExerciseFromList(index) {
   return (dispatch) => {
     dispatch(removeExercise(index));
   };

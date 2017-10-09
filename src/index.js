@@ -8,6 +8,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import registerServiceWorker from './registerServiceWorker';
 import reducers from './reducers/index.js';
 import Home from './containers/home/index.js';
+import Timer from './containers/timer/index.js';
 import NotFound from './containers/notfound/index.js';
 
 // Add the reducer to your store on the `routing` key
@@ -24,6 +25,7 @@ ReactDOM.render(
     { /* Tell the Router to use our enhanced history */ }
     <Router history={history}>
       <Route path="/" component={Home}>
+        <Route path="/timer" component={Timer} />
         <Route path="*" component={NotFound} />
       </Route>
     </Router>

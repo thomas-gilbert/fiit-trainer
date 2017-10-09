@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import Select from 'react-select';
 import {
   addExerciseToList,
-  removeExerciseToList,
 } from '../../../../actions/list.js';
 import 'react-select/dist/react-select.css';
 
@@ -34,8 +33,11 @@ export class ExerciseSelect extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(event, this.state.value, this.props.defaultValue);
-    this.props.addExerciseToList(this.state.value);
+
+    if (this.state.value !== this.props.defaultValue) {
+      this.props.addExerciseToList(this.state.value);
+    }
+
     this.setState({
       value: this.props.defaultValue,
     });
@@ -63,7 +65,6 @@ export class ExerciseSelect extends Component {
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators({
     addExerciseToList,
-    removeExerciseToList,
   }, dispatch);
 
 export default connect(null, mapDispatchToProps)(ExerciseSelect);
