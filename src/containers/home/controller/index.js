@@ -35,20 +35,19 @@ export class Controller extends Component {
       <div>
         <Row>
           <Col xsOffset={6} xs={6}>
-            <h3>Weight Exercises</h3>
             <label>
               Workout Time
-              <input type="number" value="20" placeholder="" />
+              <input type="number" defaultValue="20" placeholder="" />
               Minutes
             </label><br/>
             <label>
               Workout Interval
-              <input type="number" value="40" placeholder="" />
+              <input type="number" defaultValue="40" placeholder="" />
               Seconds
             </label><br/>
             <label>
               Rest Interval
-              <input type="number" value="20" placeholder="" />
+              <input type="number" defaultValue="20" placeholder="" />
               Seconds
             </label><br/>
             <button>START</button>
