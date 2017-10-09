@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Select from 'react-select';
 import {
   addExerciseToList,
   removeExerciseToList,
 } from '../../../../actions/list.js';
+import 'react-select/dist/react-select.css';
 
 export class ExerciseSelect extends Component {
   static propTypes = {
@@ -24,15 +26,15 @@ export class ExerciseSelect extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
+  handleChange({ value }) {
     this.setState({
-      value: event.target.value,
+      value,
     });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-
+    console.log(event, this.state.value, this.props.defaultValue);
     this.props.addExerciseToList(this.state.value);
     this.setState({
       value: this.props.defaultValue,
@@ -40,20 +42,18 @@ export class ExerciseSelect extends Component {
   }
 
   render() {
-    const optionsArray = [this.props.defaultValue, ...this.props.options];
+    const optionsArray = [this.props.defaultValue, ...this.props.options].map((value) => ({
+      value,
+      label: value,
+    }));
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <select
+        <Select
           onChange={this.handleChange}
           value={this.state.value}
-        >
-          {
-            optionsArray.map((value, key) =>
-              <option key={key}>{ value }</option>
-            )
-          }
-        </select>
+          options={optionsArray}
+        />
         <input type="submit" value="Add" />
       </form>
     );
