@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timer Component renders correctly 1`] = `
+<div
+  className="timer"
+>
+  <h2>
+    Exercise Name
+  </h2>
+  <h1>
+    COUNTDOWN
+  </h1>
+  <h2>
+    Next Thing rest/exercsie
+  </h2>
+</div>
+`;
