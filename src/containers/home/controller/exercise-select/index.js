@@ -6,7 +6,6 @@ import Select from 'react-select';
 import {
   addExerciseToList,
 } from '../../../../actions/list.js';
-import 'react-select/dist/react-select.css';
 
 export class ExerciseSelect extends Component {
   static propTypes = {

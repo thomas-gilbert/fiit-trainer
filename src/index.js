@@ -10,6 +10,7 @@ import reducers from './reducers/index.js';
 import Home from './containers/home/index.js';
 import Timer from './containers/timer/index.js';
 import NotFound from './containers/notfound/index.js';
+import 'react-select/dist/react-select.css';
 
 // Add the reducer to your store on the `routing` key
 const store = createStore(

@@ -34,9 +34,12 @@
     "eslint": "^4.8.0",
     "eslint-plugin-react": "^7.4.0",
     "jest-css-modules": "^1.1.0",
+    "react-test-renderer": "^16.0.0",
     "redux-devtools": "^3.4.0"
   },
   "jest": {
-    "transform": {".*": "<rootDir>/node_modules/jest-css-modules"}
+    "transform": {
+      ".*": "<rootDir>/node_modules/jest-css-modules"
+    }
   }
 }
