@@ -8,11 +8,13 @@ describe('Home Component', () => {
       text: 'hello',
     }];
     const removeExerciseFromList = () => ({});
-    const component = renderer.create(
+    const component = shallowWithStore(
       <Home
         list={list}
         removeExerciseFromList={removeExerciseFromList}
-      />
+      />, {
+        state: {},
+      }
     ).toJSON();
     expect(component).toMatchSnapshot();
   });
