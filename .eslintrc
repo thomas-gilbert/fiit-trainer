@@ -13,6 +13,8 @@
     "afterEach" : false,
     "shallow" : false,
     "mount" : false,
+    "shallowWithStore": false,
+    "mountWithStore": false,
   },
   "env": {
     "es6": true,

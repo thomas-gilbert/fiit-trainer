@@ -1,5 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { Home } from './index.js';
 
 describe('Home Component', () => {
@@ -15,7 +14,7 @@ describe('Home Component', () => {
       />, {
         state: {},
       }
-    ).toJSON();
+    );
     expect(component).toMatchSnapshot();
   });
 });

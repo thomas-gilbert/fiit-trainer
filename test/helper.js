@@ -2,8 +2,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import Adapter from 'enzyme-adapter-react-16';
 
-const { mount, shallow } = require('enzyme');
+const { mount, shallow, configure } = require('enzyme');
+
+configure({ adapter: new Adapter() });
 
 global.mount = mount;
 global.shallow = shallow;
