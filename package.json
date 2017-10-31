@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --setupFiles ./test/helper.js",
+    "test": "react-scripts test --setupFiles ./test/helper.js --snapshotSerializers enzyme-to-json/serializer",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
@@ -33,6 +33,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2",
+    "enzyme-to-json": "^3.1.4",
     "eslint": "^4.8.0",
     "eslint-plugin-react": "^7.4.0",
     "jest-css-modules": "^1.1.0",
