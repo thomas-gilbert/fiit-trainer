@@ -23,6 +23,7 @@ const List = ({ list, removeAction }) =>
 
 List.propTypes = {
   list: PropTypes.object.isRequired,
+  removeAction: PropTypes.func.isRequired,
 };
 
 export default List;

@@ -12,7 +12,7 @@ import './index.css';
 
 export class Home extends Component {
   static propTypes = {
-    list: PropTypes.array.isRequired,
+    list: PropTypes.object.isRequired,
     removeExerciseFromList: PropTypes.func.isRequired,
   };
 

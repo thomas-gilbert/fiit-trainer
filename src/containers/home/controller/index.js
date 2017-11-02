@@ -39,17 +39,17 @@ export class Controller extends Component {
               Workout Time
               <input type="number" defaultValue="20" placeholder="" />
               Minutes
-            </label><br/>
+            </label><br />
             <label>
               Workout Interval
               <input type="number" defaultValue="40" placeholder="" />
               Seconds
-            </label><br/>
+            </label><br />
             <label>
               Rest Interval
               <input type="number" defaultValue="20" placeholder="" />
               Seconds
-            </label><br/>
+            </label><br />
             <button>START</button>
           </Col>
         </Row>

@@ -3,18 +3,19 @@ import { Home } from './index.js';
 
 describe('Home Component', () => {
   it('renders correctly', () => {
-    const list = [{
-      text: 'hello',
-    }];
+    const list = {
+      items: [{
+        text: 'hello',
+      }],
+    };
     const removeExerciseFromList = () => ({});
-    const component = shallowWithStore(
+    const component = global.shallow(
       <Home
         list={list}
         removeExerciseFromList={removeExerciseFromList}
-      />, {
-        state: {},
-      }
+      />
     );
+
     expect(component).toMatchSnapshot();
   });
 });

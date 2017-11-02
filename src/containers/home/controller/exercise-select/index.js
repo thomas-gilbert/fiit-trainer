@@ -9,9 +9,13 @@ import {
 
 export class ExerciseSelect extends Component {
   static propTypes = {
-    options: PropTypes.array,
+    options: PropTypes.array.isRequired,
     defaultValue: PropTypes.string.isRequired,
     addExerciseToList: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    options: [],
   };
 
   constructor(props) {

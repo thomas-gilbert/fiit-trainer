@@ -1,57 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Controller Component renders correctly 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Provider
-    store={
-        Object {
-            "clearActions": [Function],
-            "dispatch": [Function],
-            "getActions": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "subscribe": [Function],
-          }
-    }
->
-    <Controller />
-</Provider>,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": null,
-    "nodeType": "class",
-    "props": Object {},
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": null,
-      "nodeType": "class",
-      "props": Object {},
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-    "state": Object {},
-  },
-}
+<div>
+  <Row
+    bsClass="row"
+    componentClass="div"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      xs={6}
+      xsOffset={6}
+    >
+      <label>
+        Workout Time
+        <input
+          defaultValue="20"
+          placeholder=""
+          type="number"
+        />
+        Minutes
+      </label>
+      <br />
+      <label>
+        Workout Interval
+        <input
+          defaultValue="40"
+          placeholder=""
+          type="number"
+        />
+        Seconds
+      </label>
+      <br />
+      <label>
+        Rest Interval
+        <input
+          defaultValue="20"
+          placeholder=""
+          type="number"
+        />
+        Seconds
+      </label>
+      <br />
+      <button>
+        START
+      </button>
+    </Col>
+  </Row>
+  <Row
+    bsClass="row"
+    componentClass="div"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      xs={6}
+    >
+      <h3>
+        Cardio Exercises
+      </h3>
+      <Connect(ExerciseSelect)
+        defaultValue="Select exercise"
+        options={Array []}
+      />
+    </Col>
+    <Col
+      bsClass="col"
+      componentClass="div"
+      xs={6}
+    >
+      <h3>
+        Weight Exercises
+      </h3>
+      <Connect(ExerciseSelect)
+        defaultValue="Select exercise"
+      />
+    </Col>
+  </Row>
+</div>
 `;

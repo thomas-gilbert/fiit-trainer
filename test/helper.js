@@ -19,9 +19,7 @@ global.shallowWithStore = function shallowWithStore(component, opts = {}) {
   }
 
   return global.shallow(
-    <Provider store={createMockStore(opts.state)}>
-      {component}
-    </Provider>, opts);
+    <Provider store={createMockStore(opts.state)}>{component}</Provider>, opts);
 };
 
 global.mountWithStore = function mountWithStore(component, opts = {}) {
@@ -30,7 +28,5 @@ global.mountWithStore = function mountWithStore(component, opts = {}) {
   }
 
   return global.mount(
-    <Provider store={createMockStore(opts.state)}>
-      {component}
-    </Provider>, opts);
+    <Provider store={createMockStore(opts.state)}>{component}</Provider>, opts);
 };
