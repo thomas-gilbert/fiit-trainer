@@ -6,7 +6,7 @@ describe('Controller Component', () => {
     const props = {
       exercises: {
         cardio: [],
-        weights: [],
+        weight: [],
       },
       getCardioExercisesAsync: jest.fn(),
       getWeightExercisesAsync: jest.fn(),

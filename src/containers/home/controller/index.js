@@ -11,19 +11,13 @@ import ExerciseSelect from './exercise-select/index.js';
 
 export class Controller extends Component {
   static propTypes = {
-    exercises: PropTypes.object,
+    exercises: PropTypes.shape({
+      cardio: PropTypes.arrayOf(PropTypes.object).isRequired,
+      weight: PropTypes.arrayOf(PropTypes.object).isRequired,
+    }),
     getCardioExercisesAsync: PropTypes.func.isRequired,
     getWeightExercisesAsync: PropTypes.func.isRequired,
   };
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      cardio: [],
-      weight: [],
-    };
-  }
 
   componentWillMount() {
     this.props.getCardioExercisesAsync();

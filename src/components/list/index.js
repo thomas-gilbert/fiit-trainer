@@ -22,7 +22,9 @@ const List = ({ list, removeAction }) =>
   </Clearfix>;
 
 List.propTypes = {
-  list: PropTypes.object.isRequired,
+  list: PropTypes.shape({
+    items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }),
   removeAction: PropTypes.func.isRequired,
 };
 

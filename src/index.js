@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { Route } from 'react-router';
-import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import registerServiceWorker from './registerServiceWorker';
 import reducers from './reducers/index.js';
@@ -17,12 +17,9 @@ const history = createHistory();
 
 // Add the reducer to your store on the `routing` key
 const store = createStore(
-  combineReducers({
-    ...reducers,
-    router: routerReducer,
-  }),
-  applyMiddleware(routerMiddleware(history)),
-  applyMiddleware(thunk),
+  reducers,
+  applyMiddleware(thunk, routerMiddleware(history)),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 ReactDOM.render(
